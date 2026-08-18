@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-slate-900 dark:bg-[#0b0a10] dark:text-slate-100;
+    @apply font-sans antialiased transition-colors duration-300;
+  }
+
+  ::selection {
+    @apply bg-accent-500/30 text-inherit;
+  }
+}
+
+@layer components {
+  .section-heading {
+    @apply font-mono text-sm uppercase tracking-[0.3em] text-accent-600 dark:text-accent-400;
+  }
+
+  .card {
+    @apply rounded-xl border border-slate-200 bg-white/70 backdrop-blur-sm
+      dark:border-white/10 dark:bg-white/[0.03];
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1
+      text-sm font-medium text-slate-700 transition-colors
+      dark:border-white/10 dark:bg-white/5 dark:text-slate-200;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-lg bg-accent-600 px-5 py-2.5 text-sm font-semibold text-white
+      shadow-lg shadow-accent-600/20 transition hover:bg-accent-500 hover:shadow-accent-500/30
+      focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-500;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 rounded-lg border border-slate-300 px-5 py-2.5 text-sm font-semibold
+      text-slate-700 transition hover:border-accent-500 hover:text-accent-600
+      dark:border-white/15 dark:text-slate-200 dark:hover:border-accent-400 dark:hover:text-accent-400;
+  }
+}
+
+.bg-grid {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.dark .bg-grid {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
